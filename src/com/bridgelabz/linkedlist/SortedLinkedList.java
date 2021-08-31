@@ -149,6 +149,44 @@ public class SortedLinkedList<K extends Comparable<K>>
 		
 	}
 	
+	public INodeIF<K> remove(K key)
+	{
+		
+		INodeIF<K> tempNode=search(key);
+
+		if(tempNode==head)
+		{
+			
+			this.head=head.getNext();
+			
+			
+			
+		}
+		else if(tempNode==tail)
+		{
+			tempNode=pop();
+		}
+		else
+		{
+			INodeIF<K> previousNode=head;
+			while(previousNode.getNext()!=tempNode)
+			{
+				tempNode=tempNode.getNext();
+			}
+
+			previousNode.setNext(tempNode.getNext());
+
+		}
+		return tempNode;
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 	public void  printMyNodes()
 	{
