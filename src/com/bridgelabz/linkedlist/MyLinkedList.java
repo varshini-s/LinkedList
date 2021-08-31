@@ -71,6 +71,22 @@ public class MyLinkedList
 		
 	}
 	
+	public INodeIF popLast()
+	{
+		INodeIF tempNode= head;
+		while(tempNode.getNext()!=tail)
+		{
+			
+			tempNode=tempNode.getNext();
+			
+		}
+		this.tail=tempNode;
+		this.tail.setNext(null);
+		tempNode=tempNode.getNext();
+		return tempNode;
+		
+	}
+	
 	public void  printMyNodes()
 	{
 		
