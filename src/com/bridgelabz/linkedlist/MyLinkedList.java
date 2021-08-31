@@ -186,12 +186,14 @@ public class MyLinkedList<K>
 	
 	public boolean isEmpty()
 	{
-		if(this.head==null && this.tail==null)
+		if(head==null || tail==null)
 		{
 			return true;
 		}
 		else
+		{
 			return false;
+		}
 		
 	}
 	
