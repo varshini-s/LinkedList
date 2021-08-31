@@ -1,6 +1,6 @@
 package com.bridgelabz.linkedlist;
 
-public class MyNodeImpl<K> implements INodeIF<K>
+public class MyNodeImpl<K extends Comparable<K>> implements INodeIF<K>
 
 {
 	

@@ -10,6 +10,8 @@ public class LinkedListMain {
 		MyNodeImpl<Integer> firstNode = new MyNodeImpl<Integer>(56);
 		MyNodeImpl<Integer> secondNode= new MyNodeImpl<Integer>(30);
 		MyNodeImpl<Integer> thirdNode = new MyNodeImpl<Integer>(70);
+		MyNodeImpl<Integer> fourthNode = new MyNodeImpl<Integer>(20);
+
 		
 		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
 		myLinkedList.addNode(firstNode);
@@ -34,6 +36,23 @@ public class LinkedListMain {
 		myLinkedList.printMyNodes();
 		myLinkedList.popLast();
 		myLinkedList.printMyNodes();
+		
+		System.out.println("Ordered list");
+		
+		SortedLinkedList<Integer> orderedList = new SortedLinkedList<Integer>();
+		MyNodeImpl<Integer> FirstNodeForOrdered = new MyNodeImpl<Integer>(4);
+		MyNodeImpl<Integer> secondNodeForOrdered= new MyNodeImpl<Integer>(5);
+		MyNodeImpl<Integer> thirdNodeForOrdered = new MyNodeImpl<Integer>(3);
+		MyNodeImpl<Integer> fourthNodeForOrdered = new MyNodeImpl<Integer>(20);
+		orderedList.add(FirstNodeForOrdered);
+		orderedList.add(secondNodeForOrdered);
+		orderedList.add(thirdNodeForOrdered);
+		orderedList.printMyNodes();
+		
+		
+		
+		
+		
 
 	}
 
