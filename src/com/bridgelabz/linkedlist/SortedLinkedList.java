@@ -103,6 +103,31 @@ public class SortedLinkedList<K extends Comparable<K>>
 		
 	}
 	
+	public int findIndex(K key)
+	{
+		int index=0;
+		
+		INodeIF<K> tempNode = head;
+
+		while(tempNode.getNext()!=null && tempNode.getKey()!=key)
+		{
+			
+			tempNode=tempNode.getNext();
+
+			index++;
+		}
+		if(tempNode.getKey()==key)
+		{
+			return index;
+		}
+		else
+			return -1;
+		
+		
+		
+		
+	}
+	
 	public void  printMyNodes()
 	{
 		
