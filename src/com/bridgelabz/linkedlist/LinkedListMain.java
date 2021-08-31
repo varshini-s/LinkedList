@@ -5,9 +5,9 @@ public class LinkedListMain {
 	public static void main(String[] args) 
 	
 	{
-		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
-		MyNode<Integer> mySecondNode= new MyNode<Integer>(30);
-		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyNodeImpl<Integer> myFirstNode = new MyNodeImpl<Integer>(56);
+		MyNodeImpl<Integer> mySecondNode= new MyNodeImpl<Integer>(30);
+		MyNodeImpl<Integer> myThirdNode = new MyNodeImpl<Integer>(70);
 		
 		myFirstNode.setNext(mySecondNode);
 		mySecondNode.setNext(myThirdNode);

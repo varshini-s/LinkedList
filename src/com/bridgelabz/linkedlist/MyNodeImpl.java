@@ -1,6 +1,6 @@
 package com.bridgelabz.linkedlist;
 
-public class MyNode<K> implements INodeIF<K>
+public class MyNodeImpl<K> implements INodeIF<K>
 
 {
 	
@@ -9,7 +9,7 @@ public class MyNode<K> implements INodeIF<K>
 
 	
 
-	public MyNode(K key)
+	public MyNodeImpl(K key)
 	{
 		
 		this.key=key;
