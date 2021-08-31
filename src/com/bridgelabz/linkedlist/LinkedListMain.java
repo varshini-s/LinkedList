@@ -16,10 +16,10 @@ public class LinkedListMain {
 		myLinkedList.appendNode(thirdNode);
 		myLinkedList.insertAfterGivenNode(firstNode, secondNode);
 		
-		System.out.println("Searching node with given key value");
 		Integer key=30;
+		System.out.println("Searching node with given key value "+key);
 		if(myLinkedList.search(key)!=null)
-		System.out.println(myLinkedList.search(key).getKey());
+		System.out.println("Key found :"+myLinkedList.search(key).getKey());
 		else
 			System.out.println("Key not found in linked list");
 		
@@ -27,6 +27,10 @@ public class LinkedListMain {
 		MyNodeImpl<Integer> newNode = new MyNodeImpl<Integer>(40);
 		myLinkedList.insertAfterGivenKey(30, newNode);
 		
+		Integer keyToDelete=30;
+		System.out.println("before deleting, size of linked list is: "+myLinkedList.size());
+		myLinkedList.deleteGivenKeyNode(keyToDelete);
+		System.out.println("After deleting, size of linked list is: "+myLinkedList.size());
 		myLinkedList.printMyNodes();
 		myLinkedList.popLast();
 		myLinkedList.printMyNodes();
