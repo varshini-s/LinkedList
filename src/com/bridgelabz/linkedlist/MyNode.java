@@ -1,11 +1,11 @@
 package com.bridgelabz.linkedlist;
 
-public class MyNode<K>
+public class MyNode<K> implements INodeIF<K>
 
 {
 	
 	private K key;
-	private MyNode next;
+	private INodeIF<K> next;
 
 	
 
@@ -16,15 +16,32 @@ public class MyNode<K>
 		this.next=null;
 	}
 	
-	public MyNode getNext() 
+	public INodeIF<K> getNext() 
 	{
 		return next;
 	}
 
-	public void setNext(MyNode next) 
+	@Override
+	public void setNext(INodeIF next) 
 	{
 		this.next = next;
+		
 	}
+
+	
+
+	@Override
+	public K getKey() 
+	{
+		return key;
+	}
+
+	@Override
+	public void setKey(K key) 
+	{
+		this.key=key;
+	}
+
 	
 
 }
