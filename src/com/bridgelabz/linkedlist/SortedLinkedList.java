@@ -91,6 +91,17 @@ public class SortedLinkedList<K extends Comparable<K>>
 		
 		return listSize;
 	}
+
+	public boolean isEmpty()
+	{
+		if(this.head==null && this.tail==null)
+		{
+			return true;
+		}
+		else
+			return false;
+		
+	}
 	
 	public void  printMyNodes()
 	{
