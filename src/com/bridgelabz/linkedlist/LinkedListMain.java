@@ -15,6 +15,14 @@ public class LinkedListMain {
 		myLinkedList.addNode(firstNode);
 		myLinkedList.appendNode(thirdNode);
 		myLinkedList.insertNode(firstNode, secondNode);
+		
+		System.out.println("Searching node with given key value");
+		Integer key=30;
+		if(myLinkedList.search(key)!=null)
+		System.out.println(myLinkedList.search(key).getKey());
+		else
+			System.out.println("Key not found in linked list");
+		
 		myLinkedList.printMyNodes();
 		myLinkedList.popLast();
 		myLinkedList.printMyNodes();
