@@ -3,8 +3,8 @@ package com.bridgelabz.linkedlist;
 public class MyLinkedList<K>
 
 {
-	private INodeIF<K> head;
-	private INodeIF<K> tail;
+	public INodeIF<K> head;
+	public INodeIF<K> tail;
 	
 	public MyLinkedList() 
 	
@@ -184,6 +184,16 @@ public class MyLinkedList<K>
 		System.out.println(myNodes);
 	}
 	
+	public boolean isEmpty()
+	{
+		if(this.head==null && this.tail==null)
+		{
+			return true;
+		}
+		else
+			return false;
+		
+	}
 	
 
 }

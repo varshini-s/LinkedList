@@ -4,29 +4,27 @@ import com.bridgelabz.linkedlist.MyLinkedList;
 public class SortedLinkedList<K extends Comparable<K>>
 
 {
-	INodeIF<K> head;
-	INodeIF<K> tail;
+	private final MyLinkedList<K> linkedlist;
 	
 	public SortedLinkedList() 
 	{
-		this.head=null;
-		this.tail=null;
+		this.linkedlist=new MyLinkedList<K>();
 	}
 	
 	public void add(INodeIF<K> newNode)
 	{
-		if(this.tail==null)
+		if(this.linkedlist.tail==null)
 		{
-			this.tail=newNode;
+			this.linkedlist.tail=newNode;
 		}
-		if(this.head==null)
+		if(this.linkedlist.head==null)
 		{
-			this.head=newNode;
+			this.linkedlist.head=newNode;
 		}
 		else
 		{
-			INodeIF<K> tempNode=head;
-			INodeIF<K> prevNode=head;
+			INodeIF<K> tempNode=linkedlist.head;
+			INodeIF<K> prevNode=linkedlist.head;
 			
 			while(tempNode.getKey().compareTo(newNode.getKey())<0 && tempNode.getNext()!=null)
 			{
@@ -34,18 +32,18 @@ public class SortedLinkedList<K extends Comparable<K>>
 				tempNode=tempNode.getNext();
 			}
 			
-			if(tempNode==this.tail && tempNode.getKey().compareTo(newNode.getKey())<0)
+			if(tempNode==this.linkedlist.tail && tempNode.getKey().compareTo(newNode.getKey())<0)
 			{
 				
 					tempNode.setNext(newNode);
-					this.tail=newNode;
+					this.linkedlist.tail=newNode;
 				
 				
 			}
-			else if(tempNode==this.head && tempNode.getKey().compareTo(newNode.getKey())>0)
+			else if(tempNode==this.linkedlist.head && tempNode.getKey().compareTo(newNode.getKey())>0)
 			{
-				newNode.setNext(head);
-				this.head=newNode;
+				newNode.setNext(linkedlist.head);
+				this.linkedlist.head=newNode;
 				
 			}
 			else
@@ -62,44 +60,28 @@ public class SortedLinkedList<K extends Comparable<K>>
 	public INodeIF<K> pop()
 	{
 		
-		INodeIF<K> tempNode= head;
-		while(tempNode.getNext()!=tail)
+		INodeIF<K> tempNode= linkedlist.head;
+		while(tempNode.getNext()!=linkedlist.tail)
 		{
 			
 			tempNode=tempNode.getNext();
 			
 		}
-		this.tail=tempNode;
-		this.tail.setNext(null);
+		this.linkedlist.tail=tempNode;
+		this.linkedlist.tail.setNext(null);
 		tempNode=tempNode.getNext();
 		return tempNode;
 		
 	}
 	
 	public int size()
-	{
-		int listSize=0;
-		INodeIF<K> tempNode=head;
-		if(tempNode!=null)
-		while(tempNode!=tail)
-		{
-			listSize++;
-			tempNode=tempNode.getNext();
-			
-		}
-		listSize++;
-		
-		return listSize;
+	{ 
+		return linkedlist.size();
 	}
 
 	public boolean isEmpty()
 	{
-		if(this.head==null && this.tail==null)
-		{
-			return true;
-		}
-		else
-			return false;
+		return linkedlist.isEmpty();
 		
 	}
 	
@@ -107,7 +89,7 @@ public class SortedLinkedList<K extends Comparable<K>>
 	{
 		int index=0;
 		
-		INodeIF<K> tempNode = head;
+		INodeIF<K> tempNode = linkedlist.head;
 
 		while(tempNode.getNext()!=null && tempNode.getKey()!=key)
 		{
@@ -130,54 +112,15 @@ public class SortedLinkedList<K extends Comparable<K>>
 	
 	public INodeIF<K> search(K key)
 	{
-		INodeIF<K> tempNode = head;
-		INodeIF<K> requiredNode=null;
-		while(tempNode.getNext()!=null && tempNode.getKey()!=key)
-		{
-			
-			
-			tempNode=tempNode.getNext();
-		}
-		if(tempNode.getKey()==key)
-		{
-			requiredNode=tempNode;
-		}
-		
-		
-		return requiredNode;
-		
+
+		return linkedlist.search(key);
 		
 	}
 	
 	public INodeIF<K> remove(K key)
 	{
 		
-		INodeIF<K> tempNode=search(key);
-
-		if(tempNode==head)
-		{
-			
-			this.head=head.getNext();
-			
-			
-			
-		}
-		else if(tempNode==tail)
-		{
-			tempNode=pop();
-		}
-		else
-		{
-			INodeIF<K> previousNode=head;
-			while(previousNode.getNext()!=tempNode)
-			{
-				tempNode=tempNode.getNext();
-			}
-
-			previousNode.setNext(tempNode.getNext());
-
-		}
-		return tempNode;
+		 return linkedlist.deleteGivenKeyNode(key);
 		
 		
 	}
@@ -191,18 +134,7 @@ public class SortedLinkedList<K extends Comparable<K>>
 	public void  printMyNodes()
 	{
 		
-		StringBuffer myNodes = new StringBuffer("my nodes:");
-		INodeIF<K> tempNode= head;
-		while(tempNode.getNext()!=null)
-		{
-			myNodes.append(tempNode.getKey());
-			if(!tempNode.equals(tail)) myNodes.append("->");
-			tempNode=tempNode.getNext();
-			
-		}
-		myNodes.append(tempNode.getKey());
-		System.out.println(myNodes);
-
+		linkedlist.printMyNodes();
 	}
 	
 }
