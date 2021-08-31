@@ -77,6 +77,21 @@ public class MyLinkedList<K>
 		
 	}
 	
+	public int size()
+	{
+		int listSize=0;
+		INodeIF<K> tempNode=head;
+		if(tempNode!=null)
+		while(tempNode!=tail)
+		{
+			listSize++;
+			tempNode=tempNode.getNext();
+			
+		}
+		listSize++;
+		
+		return listSize;
+	}
 	public INodeIF<K> pop()
 	{
 		
