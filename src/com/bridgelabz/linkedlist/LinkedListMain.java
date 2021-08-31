@@ -16,6 +16,8 @@ public class LinkedListMain {
 		myLinkedList.appendNode(thirdNode);
 		myLinkedList.insertNode(firstNode, secondNode);
 		myLinkedList.printMyNodes();
+		myLinkedList.pop();
+		myLinkedList.printMyNodes();
 
 	}
 

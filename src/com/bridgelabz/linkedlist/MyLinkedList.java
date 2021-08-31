@@ -61,6 +61,16 @@ public class MyLinkedList
 		
 	}
 	
+	public INodeIF pop()
+	{
+		
+		INodeIF tempNode=head;
+		this.head=head.getNext();
+		
+		return tempNode;
+		
+	}
+	
 	public void  printMyNodes()
 	{
 		
