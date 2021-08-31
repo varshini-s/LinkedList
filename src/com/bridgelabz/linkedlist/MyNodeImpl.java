@@ -22,7 +22,7 @@ public class MyNodeImpl<K> implements INodeIF<K>
 	}
 
 	@Override
-	public void setNext(INodeIF next) 
+	public void setNext(INodeIF<K> next) 
 	{
 		this.next = next;
 		

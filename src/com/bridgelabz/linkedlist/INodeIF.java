@@ -6,8 +6,8 @@ public interface INodeIF<K>
 	K getKey();
 	void setKey(K key);
 	
-	INodeIF getNext();
-	void setNext(INodeIF next);
+	INodeIF<K> getNext();
+	void setNext(INodeIF<K> next);
 	
 	
 	

@@ -3,8 +3,8 @@ package com.bridgelabz.linkedlist;
 public class MyLinkedList<K>
 
 {
-	private INodeIF head;
-	private INodeIF tail;
+	private INodeIF<K> head;
+	private INodeIF<K> tail;
 	
 	public MyLinkedList() 
 	
@@ -14,7 +14,7 @@ public class MyLinkedList<K>
 		
 	}
 	
-	public void  addNode(INodeIF newNode)
+	public void  addNode(INodeIF<K> newNode)
 	{
 		if(this.tail==null)
 		{
@@ -26,13 +26,13 @@ public class MyLinkedList<K>
 		}
 		else
 		{
-			INodeIF tempNode=this.head;
+			INodeIF<K> tempNode=this.head;
 			this.head=newNode;
 			this.head.setNext(tempNode);
 		}
 		
 	}
-	public void appendNode(INodeIF newNode)
+	public void appendNode(INodeIF<K> newNode)
 	{
 		if(this.head==null)
 		{
@@ -52,28 +52,44 @@ public class MyLinkedList<K>
 		
 		
 	}
-	public void insertNode(INodeIF myNode,INodeIF newNode)
+	public void insertAfterGivenNode(INodeIF<K> myNode,INodeIF<K> newNode)
 	{
-		INodeIF tempNode=myNode.getNext();
+		INodeIF<K> tempNode=myNode.getNext();
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
 		
 		
 	}
 	
-	public INodeIF pop()
+	public void insertAfterGivenKey(K key,INodeIF<K> newNode)
 	{
 		
-		INodeIF tempNode=head;
+		INodeIF<K> tempNode=search(key);
+		if(tempNode==this.tail)
+		{
+			appendNode(newNode);
+		}
+		else
+		{
+			newNode.setNext(tempNode.getNext());
+			tempNode.setNext(newNode);
+		}
+		
+	}
+	
+	public INodeIF<K> pop()
+	{
+		
+		INodeIF<K> tempNode=head;
 		this.head=head.getNext();
 		
 		return tempNode;
 		
 	}
 	
-	public INodeIF popLast()
+	public INodeIF<K> popLast()
 	{
-		INodeIF tempNode= head;
+		INodeIF<K> tempNode= head;
 		while(tempNode.getNext()!=tail)
 		{
 			
@@ -87,10 +103,10 @@ public class MyLinkedList<K>
 		
 	}
 	
-	public INodeIF search(K key)
+	public INodeIF<K> search(K key)
 	{
-		INodeIF tempNode = head;
-		INodeIF requiredNode=null;
+		INodeIF<K> tempNode = head;
+		INodeIF<K> requiredNode=null;
 		while(tempNode.getNext()!=null && tempNode.getKey()!=key)
 		{
 			
@@ -112,7 +128,7 @@ public class MyLinkedList<K>
 	{
 		
 		StringBuffer myNodes = new StringBuffer("my nodes:");
-		INodeIF tempNode= head;
+		INodeIF<K> tempNode= head;
 		while(tempNode.getNext()!=null)
 		{
 			myNodes.append(tempNode.getKey());
