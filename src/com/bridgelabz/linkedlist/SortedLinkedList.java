@@ -1,4 +1,5 @@
 package com.bridgelabz.linkedlist;
+import com.bridgelabz.linkedlist.MyLinkedList;
 
 public class SortedLinkedList<K extends Comparable<K>>
 
@@ -57,6 +58,24 @@ public class SortedLinkedList<K extends Comparable<K>>
 		}
 		
 	}
+	
+	public INodeIF<K> pop()
+	{
+		
+		INodeIF<K> tempNode= head;
+		while(tempNode.getNext()!=tail)
+		{
+			
+			tempNode=tempNode.getNext();
+			
+		}
+		this.tail=tempNode;
+		this.tail.setNext(null);
+		tempNode=tempNode.getNext();
+		return tempNode;
+		
+	}
+	
 	
 	public void  printMyNodes()
 	{
