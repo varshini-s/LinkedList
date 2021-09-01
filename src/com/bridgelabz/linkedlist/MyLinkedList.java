@@ -170,20 +170,15 @@ public class MyLinkedList<K>
 	
 	public void  printMyNodes()
 	{
-		
-		StringBuffer myNodes = new StringBuffer("my nodes:");
-		INodeIF<K> tempNode= head;
-		while(tempNode.getNext()!=null)
-		{
-			myNodes.append(tempNode.getKey());
-			if(!tempNode.equals(tail)) myNodes.append("->");
-			tempNode=tempNode.getNext();
-			
-		}
-		myNodes.append(tempNode.getKey());
-		System.out.println(myNodes);
+		 System.out.println("My nodes: "+ head);
 	}
 	
+	@Override
+	public String toString()
+	{
+		
+		return "MyLinkedListNodes{"+ head+'}';
+	}
 	public boolean isEmpty()
 	{
 		if(head==null || tail==null)

@@ -41,6 +41,16 @@ public class MyNodeImpl<K extends Comparable<K>> implements INodeIF<K>
 	{
 		this.key=key;
 	}
+	
+	public String toString()
+	{
+		StringBuilder myNodeString = new StringBuilder();
+		myNodeString.append("MyNode{"+"key=").append(key).append("}");
+		if(next!=null)
+			myNodeString.append("->").append(next);
+		return myNodeString.toString();
+		
+	}
 
 	
 

@@ -30,6 +30,7 @@ public class LinkedListMain {
 		myLinkedList.insertAfterGivenKey(30, newNode);
 		
 		Integer keyToDelete=30;
+		System.out.println(myLinkedList);
 		System.out.println("before deleting, size of linked list is: "+myLinkedList.size());
 		myLinkedList.deleteGivenKeyNode(keyToDelete);
 		System.out.println("After deleting, size of linked list is: "+myLinkedList.size());
