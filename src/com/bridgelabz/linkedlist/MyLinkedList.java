@@ -149,18 +149,22 @@ public class MyLinkedList<K>
 	{
 		INodeIF<K> tempNode = head;
 		INodeIF<K> requiredNode=null;
-		while(tempNode.getNext()!=null && tempNode.getKey()!=key)
+		if(tempNode!=null)
 		{
+			while( (tempNode.getNext()!=null) && (tempNode.getKey().equals(key)==false))
+			{
+				
+				
+				tempNode=tempNode.getNext();
+			}
+			if(tempNode.getKey().equals(key))
+			{
+				requiredNode=tempNode;
+			}
+			
+		}
 			
 			
-			tempNode=tempNode.getNext();
-		}
-		if(tempNode.getKey()==key)
-		{
-			requiredNode=tempNode;
-		}
-		
-		
 		return requiredNode;
 		
 		
