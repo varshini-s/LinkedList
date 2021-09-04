@@ -94,11 +94,22 @@ public class MyLinkedList<K>
 	}
 	public INodeIF<K> pop()
 	{
-		
-		INodeIF<K> tempNode=head;
-		this.head=head.getNext();
-		
-		return tempNode;
+		if(head==tail)
+		{
+			INodeIF<K> tempNode= head;
+			this.head=null;
+			this.tail=null;
+			return tempNode;  
+		}
+		else
+		{
+			INodeIF<K> tempNode=head;
+			this.head=head.getNext();
+			
+			return tempNode;
+			
+			
+		}
 		
 	}
 	
