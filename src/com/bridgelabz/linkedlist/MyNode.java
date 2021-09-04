@@ -1,6 +1,6 @@
 package com.bridgelabz.linkedlist;
 
-public class MyNodeImpl<K extends Comparable<K>> implements INodeIF<K>
+public class MyNode<K extends Comparable<K>> implements INodeIF<K>
 
 {
 	
@@ -9,7 +9,7 @@ public class MyNodeImpl<K extends Comparable<K>> implements INodeIF<K>
 
 	
 
-	public MyNodeImpl(K key)
+	public MyNode(K key)
 	{
 		
 		this.key=key;
