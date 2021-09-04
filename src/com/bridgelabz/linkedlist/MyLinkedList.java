@@ -159,7 +159,7 @@ public class MyLinkedList<K>
 			INodeIF<K> previousNode=head;
 			while(previousNode.getNext()!=tempNode)
 			{
-				tempNode=tempNode.getNext();
+				previousNode=previousNode.getNext();
 			}
 			
 			previousNode.setNext(tempNode.getNext());
